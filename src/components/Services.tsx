@@ -146,7 +146,7 @@ const Services = () => {
               Ready to start your next project?
             </h3>
             <p className="text-lg text-gray-300 mb-6">
-              Let's collaborate and create something amazing together
+              Let&apos;s collaborate and create something amazing together
             </p>
 
             <button

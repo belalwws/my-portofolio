@@ -7,18 +7,18 @@ import Image from "next/image";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const roles = [
-    "Software Engineer",
-    "Full-Stack Developer",
-    "React & Next.js Expert",
-    "Problem Solver"
-  ];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   // Typing animation effect
   useEffect(() => {
+    const roles = [
+      "Software Engineer",
+      "Full-Stack Developer",
+      "React & Next.js Expert",
+      "Problem Solver"
+    ];
     const currentRole = roles[currentRoleIndex];
     const typingSpeed = isDeleting ? 50 : 100;
     const pauseTime = isDeleting ? 500 : 2000;
@@ -43,7 +43,7 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, currentRoleIndex, isDeleting, roles]);
+  }, [charIndex, currentRoleIndex, isDeleting]);
 
   const scrollToNext = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });

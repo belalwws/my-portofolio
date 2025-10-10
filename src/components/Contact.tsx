@@ -126,7 +126,7 @@ const Contact = () => {
             className="inline-block mb-4"
           >
             <span className="px-6 py-2 glass rounded-full text-accent-400 font-semibold text-sm border border-accent-500/30">
-              Let's Connect
+              Let&apos;s Connect
             </span>
           </motion.div>
 
@@ -142,7 +142,7 @@ const Contact = () => {
           />
 
           <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Ready to start your next project? Let's discuss how we can bring your
+            Ready to start your next project? Let&apos;s discuss how we can bring your
             <span className="text-primary-400 font-semibold"> ideas</span> to
             <span className="text-accent-400 font-semibold"> life</span>
           </p>

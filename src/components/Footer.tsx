@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { 
+import {
   ArrowUp,
   Github,
   Linkedin,
   Mail,
   Phone,
   MapPin,
-  Globe,
   Heart,
   Code2,
   Coffee

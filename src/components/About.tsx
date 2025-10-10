@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import {
   Code,
   Users,
   Award,
   Calendar,
-  GraduationCap,
   MapPin,
   Briefcase,
   CheckCircle
@@ -27,12 +26,12 @@ const About = () => {
     satisfaction: 0
   });
 
-  const finalStats = {
+  const finalStats = useMemo(() => ({
     experience: 2,
     projects: 10,
     technologies: 15,
     satisfaction: 100
-  };
+  }), []);
 
   useEffect(() => {
     if (isInView) {
@@ -66,7 +65,7 @@ const About = () => {
       const timeout = setTimeout(animateStats, 300);
       return () => clearTimeout(timeout);
     }
-  }, [isInView]);
+  }, [isInView, finalStats]);
 
   const statisticsData = [
     {

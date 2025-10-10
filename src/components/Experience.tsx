@@ -44,15 +44,6 @@ const Experience = () => {
     ]
   };
 
-  const techStackColors = [
-    "from-blue-500 to-cyan-500",
-    "from-purple-500 to-pink-500",
-    "from-green-500 to-emerald-500",
-    "from-orange-500 to-red-500",
-    "from-indigo-500 to-purple-500",
-    "from-pink-500 to-rose-500"
-  ];
-
   return (
     <section id="experience" className="py-20 relative overflow-hidden">
       {/* Background Elements */}

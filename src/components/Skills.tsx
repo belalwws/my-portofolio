@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import {
   Code,
   Layout,
@@ -17,7 +17,7 @@ const Skills = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [animatedSkills, setAnimatedSkills] = useState<Record<string, number>>({});
 
-  const skillCategories = [
+  const skillCategories = useMemo(() => [
     {
       icon: Code,
       title: "Programming Languages",
@@ -84,7 +84,7 @@ const Skills = () => {
         { name: "Agile Methodologies", level: 85 }
       ]
     }
-  ];
+  ], []);
 
   // Animate skill bars when component comes into view
   useEffect(() => {
@@ -135,7 +135,7 @@ const Skills = () => {
         });
       });
     }
-  }, [isInView]);
+  }, [isInView, skillCategories]);
 
   // Specializations data
   const specializations = [
