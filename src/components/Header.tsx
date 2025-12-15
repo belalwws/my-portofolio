@@ -33,7 +33,7 @@ const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -57,7 +57,9 @@ const Header = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // Use native scrollIntoView on mobile for better performance
+      const isMobile = window.innerWidth < 1024;
+      element.scrollIntoView({ behavior: isMobile ? "auto" : "smooth" });
       setIsMenuOpen(false);
     }
   };

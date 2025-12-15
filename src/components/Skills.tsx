@@ -204,7 +204,7 @@ const Skills = () => {
                         <span className="text-gray-300 font-medium text-sm">
                           {skill.name}
                         </span>
-                        <span className="text-primary-400 font-semibold text-sm">
+                        <span className="text-white font-semibold text-sm">
                           {animatedLevel}%
                         </span>
                       </div>

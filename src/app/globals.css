@@ -34,6 +34,8 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Noise Texture Overlay */
@@ -514,16 +516,50 @@
   width: 100%;
 }
 
-/* Responsive typography */
+/* Responsive typography - Optimized for mobile */
 @media (max-width: 640px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
+  }
+  
+  body {
+    line-height: 1.6;
   }
 }
 
 @media (min-width: 1920px) {
   html {
     font-size: 18px;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 1024px) {
+  /* Reduce backdrop blur on mobile for performance */
+  .glass {
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+  }
+  
+  .glass-dark {
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+  }
+  
+  .glass-strong {
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+  }
+  
+  /* Disable animations on very low-end devices */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 

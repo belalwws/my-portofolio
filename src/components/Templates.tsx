@@ -156,7 +156,7 @@ const Templates = () => {
         >
           <div className="glass rounded-2xl p-6 max-w-2xl mx-auto border border-white/10">
             <div className="flex items-center justify-center space-x-2 mb-3">
-              <Code size={20} className="text-primary-400" />
+              <Code size={20} className="text-white" />
               <h3 className="text-lg font-bold text-white">
                 Clean Code & Best Practices
               </h3>

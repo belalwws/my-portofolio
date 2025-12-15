@@ -157,7 +157,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
@@ -186,7 +186,7 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10">
+              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10">
                 {/* Project Image */}
                 <div className="relative w-full h-48 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
                   <Image
@@ -199,7 +199,7 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
 
                   {/* Icon Badge */}
-                  <div className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <project.icon size={22} className="text-white" />
                   </div>
 
@@ -235,7 +235,7 @@ const Projects = () => {
                         key={featureIndex}
                         className="flex items-center space-x-2 text-xs"
                       >
-                        <div className={`w-1.5 h-1.5 bg-gradient-to-r ${project.color} rounded-full flex-shrink-0`}></div>
+                        <div className="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></div>
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -259,7 +259,7 @@ const Projects = () => {
 
                 {/* Achievement Badge */}
                 <div className="mb-4 px-6">
-                  <div className={`inline-flex items-center px-3 py-1.5 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-lg border border-white/20`}>
+                  <div className="inline-flex items-center px-3 py-1.5 bg-white/10 rounded-lg border border-white/20">
                     <span className="text-xs font-medium text-white">
                       🏆 {project.achievements}
                     </span>

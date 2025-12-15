@@ -1,17 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function CustomCursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const rafRef = useRef<number>();
 
     useEffect(() => {
+        // Throttle mouse position updates using requestAnimationFrame
         const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-            setIsVisible(true);
+            if (rafRef.current) return;
+            
+            rafRef.current = requestAnimationFrame(() => {
+                setMousePosition({ x: e.clientX, y: e.clientY });
+                setIsVisible(true);
+                rafRef.current = undefined;
+            });
         };
 
         const handleMouseEnter = () => setIsVisible(true);
@@ -26,7 +33,7 @@ export default function CustomCursor() {
             });
         };
 
-        window.addEventListener("mousemove", updateMousePosition);
+        window.addEventListener("mousemove", updateMousePosition, { passive: true });
         document.addEventListener("mouseenter", handleMouseEnter);
         document.addEventListener("mouseleave", handleMouseLeave);
 
@@ -34,6 +41,7 @@ export default function CustomCursor() {
         const timeout = setTimeout(addHoverListeners, 1000);
 
         return () => {
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
             window.removeEventListener("mousemove", updateMousePosition);
             document.removeEventListener("mouseenter", handleMouseEnter);
             document.removeEventListener("mouseleave", handleMouseLeave);
@@ -50,7 +58,7 @@ export default function CustomCursor() {
         <>
             {/* Main cursor dot */}
             <motion.div
-                className="fixed top-0 left-0 w-3 h-3 bg-primary-500 rounded-full pointer-events-none z-[9999] mix-blend-difference hidden lg:block"
+                className="fixed top-0 left-0 w-3 h-3 bg-primary-500 rounded-full pointer-events-none z-[9999] mix-blend-difference hidden lg:block will-change-transform"
                 animate={{
                     x: mousePosition.x - 6,
                     y: mousePosition.y - 6,
@@ -58,16 +66,15 @@ export default function CustomCursor() {
                     opacity: isVisible ? 1 : 0,
                 }}
                 transition={{
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 28,
-                    mass: 0.5,
+                    type: "tween",
+                    duration: 0.1,
+                    ease: "linear",
                 }}
             />
 
             {/* Cursor ring */}
             <motion.div
-                className="fixed top-0 left-0 w-10 h-10 border-2 border-primary-400/50 rounded-full pointer-events-none z-[9998] hidden lg:block"
+                className="fixed top-0 left-0 w-10 h-10 border-2 border-primary-400/50 rounded-full pointer-events-none z-[9998] hidden lg:block will-change-transform"
                 animate={{
                     x: mousePosition.x - 20,
                     y: mousePosition.y - 20,
@@ -75,10 +82,9 @@ export default function CustomCursor() {
                     opacity: isVisible ? 0.5 : 0,
                 }}
                 transition={{
-                    type: "spring",
-                    stiffness: 150,
-                    damping: 15,
-                    mass: 0.1,
+                    type: "tween",
+                    duration: 0.15,
+                    ease: "easeOut",
                 }}
             />
         </>

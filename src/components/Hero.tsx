@@ -36,7 +36,7 @@ const useTextScramble = (text: string, isActive: boolean) => {
       }
 
       iteration += 1 / 2;
-    }, 30);
+    }, 50);
 
     return () => clearInterval(interval);
   }, [text, isActive, chars]);
@@ -62,7 +62,7 @@ const Hero = () => {
     const interval = setInterval(() => {
       setIsScrambling(true);
       setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [roles.length]);
@@ -98,27 +98,27 @@ const Hero = () => {
             backgroundSize: '60px 60px',
           }}
         />
-        {/* Gradient orbs */}
+        {/* Gradient orbs - Optimized */}
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3]
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.3, 0.2]
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-[120px]"
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary-500/15 rounded-full blur-[80px] will-change-transform"
         />
         <motion.div
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3]
+            scale: [1.1, 1, 1.1],
+            opacity: [0.2, 0.3, 0.2]
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-secondary-500/20 rounded-full blur-[120px]"
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary-500/15 rounded-full blur-[80px] will-change-transform"
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-20">
 
           {/* Left Content */}
           <motion.div
@@ -146,7 +146,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-gray-400 mb-4"
+              className="text-base sm:text-lg md:text-xl text-gray-400 mb-3 sm:mb-4"
             >
               Hello, I&apos;m
             </motion.p>
@@ -156,7 +156,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-4 leading-[1.1]"
             >
               <span className="gradient-text">Belal Ahmed</span>
               <br />
@@ -168,13 +168,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="mb-8"
+              className="mb-6 sm:mb-8"
             >
-              <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <Zap className="w-6 h-6 text-primary-400" />
-                <p className="text-2xl md:text-3xl lg:text-4xl font-mono font-semibold text-primary-400">
+              <div className="flex items-center gap-2 sm:gap-3 justify-center lg:justify-start">
+                <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono font-semibold text-white break-words">
                   {scrambledText}
-                  <span className="ml-1 inline-block w-[3px] h-8 bg-primary-400 animate-pulse" />
+                  <span className="ml-1 inline-block w-[2px] sm:w-[3px] h-6 sm:h-8 bg-primary-400 animate-pulse" />
                 </p>
               </div>
             </motion.div>
@@ -184,7 +184,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-base md:text-lg text-gray-400 mb-8 max-w-xl leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-gray-400 mb-6 sm:mb-8 max-w-xl leading-relaxed px-2 sm:px-0"
             >
               A dedicated Software Engineer based in Alexandria with <span className="text-white font-medium">2+ years</span> of hands-on experience.
               I craft modern web solutions using React and Next.js, focusing on <span className="text-white font-medium">clean code</span> and <span className="text-white font-medium">smooth user experiences</span>.
@@ -197,9 +197,9 @@ const Hero = () => {
               transition={{ delay: 0.65 }}
               className="flex justify-center lg:justify-start mb-8"
             >
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20">
-                <Coffee size={16} className="text-amber-400" />
-                <span className="text-sm text-amber-300/80">Fueled by coffee & code</span>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20">
+                <Coffee size={16} className="text-white" />
+                <span className="text-sm text-white/80">Fueled by coffee & code</span>
               </div>
             </motion.div>
 

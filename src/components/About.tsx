@@ -117,7 +117,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-500/5 to-transparent opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-50"></div>
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
@@ -170,7 +170,7 @@ const About = () => {
                   key={index}
                   className="flex items-start space-x-2"
                 >
-                  <CheckCircle size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-white mt-0.5 flex-shrink-0" />
                   <span className="text-gray-300 text-sm">{achievement}</span>
                 </div>
               ))}
@@ -199,7 +199,7 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="text-xl font-bold text-white mb-2">{educationData.degree}</h4>
-                  <p className="text-primary-400 font-semibold mb-1">{educationData.institution}</p>
+                  <p className="text-white font-semibold mb-1">{educationData.institution}</p>
                   <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
                     <div className="flex items-center space-x-1">
                       <MapPin size={14} />
@@ -229,7 +229,7 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="text-xl font-bold text-white mb-2">Software Engineer</h4>
-                  <p className="text-secondary-400 font-semibold mb-1">Innovologia</p>
+                  <p className="text-white font-semibold mb-1">Innovologia</p>
                   <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
                     <div className="flex items-center space-x-1">
                       <MapPin size={14} />
@@ -260,10 +260,10 @@ const About = () => {
           {statisticsData.map((stat, index) => (
             <div
               key={index}
-              className="glass rounded-2xl p-6 text-center border border-white/10 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 group hover:-translate-y-1"
+              className="glass rounded-2xl p-6 text-center border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-xl hover:shadow-white/10 group hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+              <div className="w-14 h-14 bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <stat.icon size={24} className="text-white" strokeWidth={2.5} />
               </div>
 
@@ -272,7 +272,7 @@ const About = () => {
                 <span className="text-3xl lg:text-4xl font-bold gradient-text">
                   {stat.value}
                 </span>
-                <span className="text-2xl font-bold text-primary-400">
+                <span className="text-2xl font-bold text-white">
                   {stat.suffix}
                 </span>
               </div>

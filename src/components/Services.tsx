@@ -20,51 +20,51 @@ const Services = () => {
     {
       icon: Code,
       title: "Building Modern Interfaces",
-      description: "Creating fast and scalable web apps using React and Next.js with clean TypeScript code.",
-      features: ["React & Next.js", "TypeScript", "State Management", "Performance"],
-      gradient: "from-blue-500 to-cyan-500"
+      description: "Creating fast and scalable web apps using React and Next.js. I write clean TypeScript code and make sure everything runs smoothly.",
+      features: ["React & Next.js", "TypeScript Magic", "Smart State Handling", "Speed Matters"],
+      color: "from-primary-500 to-primary-600"
     },
     {
       icon: Smartphone,
       title: "Mobile-Friendly Design",
-      description: "Your site will look great on any device - phone, tablet, or desktop.",
-      features: ["Mobile First", "Responsive", "Touch-Ready", "Flexible"],
-      gradient: "from-purple-500 to-pink-500"
+      description: "Your site will look great on any device - phone, tablet, or desktop. I start with mobile and scale up from there.",
+      features: ["Mobile First", "Works Everywhere", "Touch-Ready", "Flexible Layouts"],
+      color: "from-primary-500 to-primary-600"
     },
     {
       icon: Layout,
       title: "Bringing Designs to Life",
-      description: "Turning designs into real, interactive websites with smooth animations.",
-      features: ["Pixel Perfect", "Animations", "Intuitive UX", "Clean UI"],
-      gradient: "from-orange-500 to-red-500"
+      description: "I take your designs and turn them into real, interactive websites with smooth animations that feel natural.",
+      features: ["Pixel Perfect", "Smooth Animations", "Easy to Use", "Looks & Feels Great"],
+      color: "from-primary-500 to-primary-600"
     },
     {
       icon: Globe,
       title: "Complete Web Solutions",
-      description: "Building full web applications with authentication, APIs, and real-time features.",
-      features: ["User Auth", "Live Updates", "API Integration", "Database"],
-      gradient: "from-green-500 to-emerald-500"
+      description: "Building full web applications with login systems, real-time updates, and everything connected properly.",
+      features: ["User Login", "Live Updates", "API Connections", "Data Management"],
+      color: "from-primary-500 to-primary-600"
     },
     {
       icon: Zap,
       title: "Making Sites Lightning Fast",
-      description: "Optimizing code and assets for blazing fast load times and better SEO.",
-      features: ["Fast Loading", "Code Splitting", "SEO Optimized", "Core Web Vitals"],
-      gradient: "from-yellow-500 to-orange-500"
+      description: "I optimize code and images so your site loads quickly. Better speed means happier users and better SEO.",
+      features: ["Fast Loading", "Smart Code Split", "SEO Friendly", "Top Performance"],
+      color: "from-primary-500 to-primary-600"
     },
     {
       icon: Users,
       title: "Working with Teams",
-      description: "Collaborative development with code reviews, pair programming, and mentoring.",
-      features: ["Agile", "Code Reviews", "Mentoring", "Documentation"],
-      gradient: "from-indigo-500 to-purple-500"
+      description: "I fit right into dev teams. Code reviews, pair programming, and helping others - I enjoy collaborative work.",
+      features: ["Agile Workflow", "Clean PRs", "Mentoring Others", "Sharing Knowledge"],
+      color: "from-primary-500 to-primary-600"
     }
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section id="services" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary-500/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary-500/5 to-transparent opacity-50"></div>
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
@@ -78,7 +78,7 @@ const Services = () => {
             My <span className="gradient-text">Services</span>
           </h2>
 
-          <div className="w-24 h-1 bg-primary-gradient mx-auto rounded-full mb-6" />
+          <div className="w-24 h-1 bg-primary-gradient mx-auto rounded-full mb-6"></div>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Here&apos;s what I can help you with - from idea to launch
@@ -86,48 +86,48 @@ const Services = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }}
               className="group"
             >
-              <div className="relative h-full glass rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-
-                {/* Icon */}
-                <div className="flex justify-center mb-6">
-                  <div className={`relative w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                    <service.icon size={28} className="text-white" strokeWidth={2} />
-                    {/* Icon glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+              <div className="glass rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 h-full group-hover:shadow-xl group-hover:shadow-white/10 hover:-translate-y-1 text-center">
+                {/* Icon Container */}
+                <div className="mb-6 flex justify-center">
+                  <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <service.icon size={28} className="text-white" strokeWidth={2.5} />
                   </div>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 text-center">
-                  {service.title}
-                </h3>
+                {/* Content */}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    {service.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-gray-400 mb-6 leading-relaxed text-sm text-center">
-                  {service.description}
-                </p>
+                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
 
-                {/* Features as tags */}
-                <div className="flex flex-wrap justify-center gap-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <span
-                      key={featureIndex}
-                      className="px-3 py-1 text-xs font-medium text-gray-300 bg-white/5 rounded-full border border-white/10 hover:border-white/20 transition-colors"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+                  {/* Features List */}
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-center space-x-2 text-sm text-gray-400"
+                      >
+                        <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </motion.div>
@@ -139,29 +139,22 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-20"
+          className="text-center mt-16"
         >
-          <div className="glass rounded-2xl p-10 border border-white/10 max-w-2xl mx-auto">
-            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+          <div className="glass rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
+            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
               Ready to start your next project?
             </h3>
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="text-lg text-gray-300 mb-6">
               Let&apos;s collaborate and create something amazing together
             </p>
 
-            <motion.button
+            <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-10 py-4 overflow-hidden rounded-xl font-semibold"
+              className="px-8 py-3.5 bg-primary-gradient text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary-500/30 transition-all duration-300 hover:scale-105"
             >
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500" />
-              {/* Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-              {/* Content */}
-              <span className="relative text-white">Get In Touch</span>
-            </motion.button>
+              Get In Touch
+            </button>
           </div>
         </motion.div>
       </div>

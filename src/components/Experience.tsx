@@ -105,11 +105,11 @@ const Experience = () => {
                           {workExperience.title}
                         </h3>
                         <div className="flex items-center space-x-2 mb-2">
-                          <h4 className="text-xl font-semibold text-primary-400">
+                          <h4 className="text-xl font-semibold text-white">
                             {workExperience.company}
                           </h4>
                           <span className="text-gray-500">•</span>
-                          <span className="text-secondary-400 font-medium">
+                          <span className="text-white/80 font-medium">
                             {workExperience.type}
                           </span>
                         </div>
@@ -147,7 +147,7 @@ const Experience = () => {
                   {/* Key Achievements */}
                   <div>
                     <h5 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                      <CheckCircle size={18} className="text-green-400" />
+                      <CheckCircle size={18} className="text-white" />
                       <span>Key Achievements</span>
                     </h5>
                     <div className="space-y-2">
@@ -166,7 +166,7 @@ const Experience = () => {
                   {/* Highlights */}
                   <div>
                     <h5 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                      <CheckCircle size={18} className="text-purple-400" />
+                      <CheckCircle size={18} className="text-white" />
                       <span>Project Highlights</span>
                     </h5>
                     <div className="space-y-2">
@@ -186,7 +186,7 @@ const Experience = () => {
                 {/* Tech Stack */}
                 <div>
                   <h5 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                    <CheckCircle size={18} className="text-blue-400" />
+                    <CheckCircle size={18} className="text-white" />
                     <span>Tech Stack</span>
                   </h5>
                   <div className="flex flex-wrap gap-2">

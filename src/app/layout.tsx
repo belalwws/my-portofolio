@@ -96,10 +96,9 @@ export default function RootLayout({
               {/* Primary gradient base */}
               <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#0c0a1d] to-slate-950" />
 
-              {/* Animated gradient orbs */}
-              <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-primary-500/8 rounded-full blur-[150px] animate-pulse-slow" />
-              <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary-500/8 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-              <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-accent-500/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '4s' }} />
+              {/* Animated gradient orbs - Optimized for performance */}
+              <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary-500/6 rounded-full blur-[100px] animate-pulse-slow will-change-transform" />
+              <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-secondary-500/6 rounded-full blur-[80px] animate-pulse-slow will-change-transform" style={{ animationDelay: '2s' }} />
             </div>
 
             {/* Main Content */}

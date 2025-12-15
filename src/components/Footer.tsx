@@ -96,7 +96,7 @@ const Footer = () => {
                   <span className="gradient-text">Belal</span>
                   <span className="text-white ml-2">Ahmed</span>
                 </h3>
-                <p className="text-primary-400 font-semibold mb-4">Front-End Developer</p>
+                <p className="text-white font-semibold mb-4">Front-End Developer</p>
                 <p className="text-gray-300 leading-relaxed max-w-md">
                   Passionate about creating exceptional digital experiences through clean code and innovative design.
                   Specializing in React.js, Next.js, and modern web technologies.
@@ -106,17 +106,17 @@ const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin size={16} className="text-primary-400" />
+                  <MapPin size={16} className="text-white" />
                   <span className="text-sm">Alexandria, Egypt</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail size={16} className="text-primary-400" />
+                  <Mail size={16} className="text-white" />
                   <a href="mailto:belal.ahmed121sq1@gmail.com" className="text-sm hover:text-white transition-colors">
                     belal.ahmed121sq1@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone size={16} className="text-primary-400" />
+                  <Phone size={16} className="text-white" />
                   <a href="tel:+201128300607" className="text-sm hover:text-white transition-colors">
                     +201128300607
                   </a>
@@ -191,7 +191,7 @@ const Footer = () => {
               <div className="glass rounded-xl p-4 border border-white/10">
                 <div className="flex items-center space-x-2 mb-2">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400 font-medium text-sm">Available for work</span>
+                  <span className="text-white font-medium text-sm">Available for work</span>
                 </div>
                 <p className="text-gray-400 text-sm">
                   Open to new opportunities and exciting projects
@@ -217,7 +217,7 @@ const Footer = () => {
               <span>and</span>
               <Coffee size={16} className="text-orange-400" />
               <span>using</span>
-              <Code2 size={16} className="text-blue-400" />
+              <Code2 size={16} className="text-white" />
             </div>
 
             {/* Back to Top Button - Enhanced */}
