@@ -19,52 +19,52 @@ const Services = () => {
   const services = [
     {
       icon: Code,
-      title: "Frontend Development",
-      description: "Modern, scalable React.js and Next.js applications with TypeScript, optimized for performance and user experience.",
-      features: ["React.js & Next.js", "TypeScript", "State Management", "Performance Optimization"],
-      color: "from-primary-500 to-primary-600"
+      title: "Building Modern Interfaces",
+      description: "Creating fast and scalable web apps using React and Next.js with clean TypeScript code.",
+      features: ["React & Next.js", "TypeScript", "State Management", "Performance"],
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: Smartphone,
-      title: "Responsive Design",
-      description: "Pixel-perfect, mobile-first responsive designs that work flawlessly across all devices and screen sizes.",
-      features: ["Mobile-First Approach", "Cross-Browser Compatible", "Touch Interactions", "Adaptive Layouts"],
-      color: "from-primary-500 to-primary-600"
+      title: "Mobile-Friendly Design",
+      description: "Your site will look great on any device - phone, tablet, or desktop.",
+      features: ["Mobile First", "Responsive", "Touch-Ready", "Flexible"],
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: Layout,
-      title: "UI/UX Implementation",
-      description: "Transform designs into interactive, accessible user interfaces with smooth animations and micro-interactions.",
-      features: ["Design Systems", "Animation Libraries", "Accessibility", "User-Centered Design"],
-      color: "from-primary-500 to-primary-600"
+      title: "Bringing Designs to Life",
+      description: "Turning designs into real, interactive websites with smooth animations.",
+      features: ["Pixel Perfect", "Animations", "Intuitive UX", "Clean UI"],
+      gradient: "from-orange-500 to-red-500"
     },
     {
       icon: Globe,
-      title: "Web Applications",
-      description: "Full-featured web applications with real-time functionality, authentication, and complex state management.",
-      features: ["Real-time Features", "Authentication", "API Integration", "Database Management"],
-      color: "from-primary-500 to-primary-600"
+      title: "Complete Web Solutions",
+      description: "Building full web applications with authentication, APIs, and real-time features.",
+      features: ["User Auth", "Live Updates", "API Integration", "Database"],
+      gradient: "from-green-500 to-emerald-500"
     },
     {
       icon: Zap,
-      title: "Performance Optimization",
-      description: "Speed optimization, code splitting, lazy loading, and SEO improvements for maximum performance scores.",
-      features: ["Code Splitting", "Lazy Loading", "SEO Optimization", "Core Web Vitals"],
-      color: "from-primary-500 to-primary-600"
+      title: "Making Sites Lightning Fast",
+      description: "Optimizing code and assets for blazing fast load times and better SEO.",
+      features: ["Fast Loading", "Code Splitting", "SEO Optimized", "Core Web Vitals"],
+      gradient: "from-yellow-500 to-orange-500"
     },
     {
       icon: Users,
-      title: "Team Collaboration",
-      description: "Agile development, code reviews, mentoring, and seamless integration with development teams.",
-      features: ["Agile Methodologies", "Code Reviews", "Team Leadership", "Knowledge Sharing"],
-      color: "from-primary-500 to-primary-600"
+      title: "Working with Teams",
+      description: "Collaborative development with code reviews, pair programming, and mentoring.",
+      features: ["Agile", "Code Reviews", "Mentoring", "Documentation"],
+      gradient: "from-indigo-500 to-purple-500"
     }
   ];
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden">
+    <section id="services" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary-500/5 to-transparent opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary-500/5 to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
@@ -78,56 +78,56 @@ const Services = () => {
             My <span className="gradient-text">Services</span>
           </h2>
 
-          <div className="w-24 h-1 bg-primary-gradient mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-primary-gradient mx-auto rounded-full mb-6" />
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive front-end development services to bring your vision to life
+            Here&apos;s what I can help you with - from idea to launch
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 h-full group-hover:shadow-lg group-hover:shadow-primary-500/10">
-                {/* Icon Container */}
-                <div className="mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon size={28} className="text-white" strokeWidth={2.5} />
+              <div className="relative h-full glass rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+
+                {/* Icon */}
+                <div className="flex justify-center mb-6">
+                  <div className={`relative w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                    <service.icon size={28} className="text-white" strokeWidth={2} />
+                    {/* Icon glow */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                   </div>
                 </div>
 
-                {/* Content */}
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {service.title}
-                  </h3>
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white mb-3 text-center">
+                  {service.title}
+                </h3>
 
-                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
+                {/* Description */}
+                <p className="text-gray-400 mb-6 leading-relaxed text-sm text-center">
+                  {service.description}
+                </p>
 
-                  {/* Features List */}
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center space-x-2 text-sm text-gray-400"
-                      >
-                        <div className={`w-1.5 h-1.5 bg-gradient-to-r ${service.color} rounded-full`}></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Features as tags */}
+                <div className="flex flex-wrap justify-center gap-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <span
+                      key={featureIndex}
+                      className="px-3 py-1 text-xs font-medium text-gray-300 bg-white/5 rounded-full border border-white/10 hover:border-white/20 transition-colors"
+                    >
+                      {feature}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -139,22 +139,29 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <div className="glass rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
-            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+          <div className="glass rounded-2xl p-10 border border-white/10 max-w-2xl mx-auto">
+            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
               Ready to start your next project?
             </h3>
-            <p className="text-lg text-gray-300 mb-6">
+            <p className="text-lg text-gray-300 mb-8">
               Let&apos;s collaborate and create something amazing together
             </p>
 
-            <button
+            <motion.button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-3 bg-primary-gradient text-white font-semibold rounded-xl hover:opacity-90 transition-opacity duration-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-10 py-4 overflow-hidden rounded-xl font-semibold"
             >
-              Get In Touch
-            </button>
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500" />
+              {/* Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+              {/* Content */}
+              <span className="relative text-white">Get In Touch</span>
+            </motion.button>
           </div>
         </motion.div>
       </div>

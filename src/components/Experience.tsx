@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import {
   Calendar,
   MapPin,
@@ -16,31 +17,31 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const workExperience = {
-    title: "Front-End Developer",
-    company: "Lisan Alhekma Academy",
-    location: "Alexandria, Egypt",
-    period: "March 2025 – Present",
-    type: "Educational Platform",
-    description: "Lead front-end development for comprehensive Islamic educational platform with multi-role architecture (Students, Teachers, Academic Supervisors, Admins) serving diverse user base.",
+    title: "Software Engineer",
+    company: "Innovologia",
+    location: "Saudi Arabia",
+    period: "July 2025 – Dec 2025",
+    type: "Hackathon Management Platform",
+    description: "Built production-ready multi-tenant hackathon platform for Saudi-based tech company, collaborating with cross-functional team of designers, product managers, and stakeholders across multiple time zones.",
     achievements: [
-      "Architected full RTL Arabic support with Islamic theming",
-      "Implemented advanced RBAC system with JWT authentication",
-      "Integrated LiveKit WebRTC for real-time virtual classrooms",
-      "Built hierarchical course management supporting four types",
-      "Delivered four specialized role-specific dashboards",
-      "Achieved fully responsive design with performance optimization"
+      "Designed comprehensive database schema with 25+ tables and developed 100+ RESTful API endpoints",
+      "Implemented enterprise-grade security features including RBAC, JWT authentication, CSRF protection, and rate limiting",
+      "Delivered dynamic registration system and rubric-based judging with Excel exports",
+      "Automated Arabic PDF certificate generation using Canvas API, processing 5,000+ emails monthly",
+      "Optimized and deployed on DigitalOcean App Platform achieving p95 response time under 2 seconds",
+      "Built interactive analytics dashboards and automated email workflows for real-time communications"
     ],
     techStack: [
-      "Next.js 14", "TypeScript", "React 18", "Tailwind CSS", 
-      "Radix UI", "Redux Toolkit", "React Query", "Zustand", 
-      "LiveKit (WebRTC)", "JWT", "RESTful APIs"
+      "Next.js 15", "React 19", "TypeScript", "Prisma", "PostgreSQL",
+      "Tailwind CSS", "Radix UI", "DigitalOcean", "Neon", "Cloudinary",
+      "Recharts", "Nodemailer"
     ],
     highlights: [
-      "Real-time virtual classrooms with live streaming",
-      "Screen sharing and dynamic permissions",
-      "Session recording with playback capabilities",
-      "Custom enrollment workflows",
-      "Progress tracking system"
+      "Supporting 1,000+ monthly active users with 99.9% uptime",
+      "Processing 5,000+ emails monthly and generating 1,000+ certificates",
+      "Multi-tenant architecture for scalable hackathon management",
+      "Comprehensive audit logging system for security compliance",
+      "Real-time analytics and reporting dashboards"
     ]
   };
 
@@ -62,7 +63,7 @@ const Experience = () => {
           </h2>
           <div className="w-20 h-1 bg-primary-gradient mx-auto rounded-full mb-4"></div>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Professional experience building scalable web applications and leading development teams
+            Where I&apos;ve worked and what I&apos;ve been building
           </p>
         </motion.div>
 
@@ -85,21 +86,34 @@ const Experience = () => {
               </div>
 
               {/* Content Card */}
-              <div className="glass rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors duration-300 group">
+              <div className="glass rounded-2xl p-6 border border-white/10 hover:border-primary-500/30 transition-all duration-300 group hover:shadow-xl hover:shadow-primary-500/10">
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {workExperience.title}
-                    </h3>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <h4 className="text-xl font-semibold text-primary-400">
-                        {workExperience.company}
-                      </h4>
-                      <span className="text-gray-500">•</span>
-                      <span className="text-secondary-400 font-medium">
-                        {workExperience.type}
-                      </span>
+                    <div className="flex items-start space-x-4 mb-4">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white/10 bg-white flex-shrink-0">
+                        <Image
+                          src="/images/innovologia.jpg"
+                          alt="Innovologia Logo"
+                          width={64}
+                          height={64}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold text-white mb-2">
+                          {workExperience.title}
+                        </h3>
+                        <div className="flex items-center space-x-2 mb-2">
+                          <h4 className="text-xl font-semibold text-primary-400">
+                            {workExperience.company}
+                          </h4>
+                          <span className="text-gray-500">•</span>
+                          <span className="text-secondary-400 font-medium">
+                            {workExperience.type}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                     
                     <div className="flex flex-wrap gap-4 text-sm text-gray-400">
@@ -116,9 +130,9 @@ const Experience = () => {
                   
                   {/* Status Badge */}
                   <div className="mt-4 lg:mt-0">
-                    <span className="inline-flex items-center px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium border border-green-500/30">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                      Currently Working
+                    <span className="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium border border-blue-500/30">
+                      <CheckCircle size={14} className="mr-2" />
+                      Completed
                     </span>
                   </div>
                 </div>
@@ -200,11 +214,11 @@ const Experience = () => {
         >
           <div className="glass rounded-2xl p-8 max-w-2xl mx-auto border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Interested in working together?
+              Want to work together?
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              I&apos;m always open to discussing new opportunities and exciting projects. 
-              Let&apos;s create something amazing together!
+              I&apos;m always open to new projects and opportunities. 
+              Let&apos;s chat about what we can build!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button

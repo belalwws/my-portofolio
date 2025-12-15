@@ -65,7 +65,7 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       username: "Belal Ahmed Mohamed",
-      href: "https://linkedin.com/in/belal-ahmed",
+      href: "https://www.linkedin.com/in/belal-ahmid",
       color: "from-primary-500 to-primary-600"
     },
     {
@@ -142,9 +142,9 @@ const Contact = () => {
           />
 
           <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Ready to start your next project? Let&apos;s discuss how we can bring your
-            <span className="text-primary-400 font-semibold"> ideas</span> to
-            <span className="text-accent-400 font-semibold"> life</span>
+            Have a project in mind? Let&apos;s chat about
+            <span className="text-primary-400 font-semibold"> what</span> we can
+            <span className="text-accent-400 font-semibold"> build</span> together
           </p>
         </motion.div>
 
@@ -158,11 +158,11 @@ const Contact = () => {
           >
             {/* Intro Text */}
             <div>
-              <h3 className="text-3xl font-bold text-white mb-4">Let&apos;s Start a Conversation</h3>
+              <h3 className="text-3xl font-bold text-white mb-4">Let&apos;s Talk</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                I&apos;m always interested in hearing about new projects and opportunities. 
-                Whether you&apos;re a company looking to hire, or you&apos;re someone with an idea 
-                you&apos;d like to discuss, I&apos;d love to hear from you.
+                I love hearing about new projects! Whether you need a developer for your team, 
+                or you have an idea you want to discuss, feel free to reach out. 
+                I&apos;m always happy to chat.
               </p>
               
               <div className="flex items-center space-x-2 text-green-400 mb-6">
@@ -181,9 +181,9 @@ const Contact = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.3 + (index * 0.1) }}
-                  className="group flex items-center space-x-4 glass rounded-2xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300"
+                  className="group flex items-center space-x-4 glass rounded-2xl p-4 border border-white/10 hover:border-primary-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-500/10"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${contact.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-12 h-12 bg-gradient-to-br ${contact.color} rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     <contact.icon size={20} className="text-white" />
                   </div>
                   <div className="flex-1">
@@ -232,8 +232,8 @@ const Contact = () => {
                 <h4 className="text-lg font-semibold text-white">Response Time</h4>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
-                I typically respond to messages within 24 hours during business days. 
-                For urgent matters, feel free to call directly.
+                Usually reply within 24 hours on weekdays. 
+                Need something urgent? Just give me a call!
               </p>
             </div>
           </motion.div>
@@ -287,7 +287,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-5 py-4 glass border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all duration-300 hover:border-white/20"
+                      className="w-full px-5 py-4 glass border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all duration-300 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -303,7 +303,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-5 py-4 glass border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all duration-300 hover:border-white/20"
+                    className="w-full px-5 py-4 glass border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all duration-300 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5"
                     placeholder="Project Discussion"
                   />
                 </div>
@@ -318,7 +318,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-5 py-4 glass border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all duration-300 resize-none hover:border-white/20"
+                    className="w-full px-5 py-4 glass border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all duration-300 resize-none hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5"
                     placeholder="Tell me about your project ideas, requirements, or any questions you have..."
                   />
                 </div>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import SmoothScroller from "@/components/SmoothScroller";
+import CustomCursor from "@/components/CustomCursor";
+import PageLoader from "@/components/PageLoader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,6 +44,10 @@ export const metadata: Metadata = {
     description: "Experienced Front-End Developer specializing in scalable, responsive web applications using modern JavaScript frameworks.",
     images: ["/og-image.png"],
   },
+  icons: {
+    icon: "/images/profile.png",
+    apple: "/images/profile.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -76,7 +83,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#3b82f6" />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden`}
+        className={`${inter.variable} font-sans antialiased bg-[#050508] text-white overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -85,14 +92,22 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <div className="relative min-h-screen">
-            {/* Background */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500 rounded-full blur-3xl"></div>
-              <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-secondary-500 rounded-full blur-3xl"></div>
+            {/* Enhanced Dynamic Background */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+              {/* Primary gradient base */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#0c0a1d] to-slate-950" />
+
+              {/* Animated gradient orbs */}
+              <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-primary-500/8 rounded-full blur-[150px] animate-pulse-slow" />
+              <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary-500/8 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-accent-500/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '4s' }} />
             </div>
 
             {/* Main Content */}
             <div className="relative z-10">
+              <SmoothScroller />
+              <CustomCursor />
+              <PageLoader />
               {children}
             </div>
           </div>

@@ -75,14 +75,14 @@ const Templates = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 h-full">
+              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10">
                 {/* Template Image */}
                 <div className="relative w-full h-48 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
                   <Image
                     src={template.image}
                     alt={template.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
@@ -125,9 +125,9 @@ const Templates = () => {
                       href={template.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-2 px-6 py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-gray-100 transition-all duration-200 text-sm w-full shadow-lg"
+                      className="group/btn flex items-center justify-center space-x-2 px-6 py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-gray-50 hover:shadow-lg transition-all duration-300 text-sm w-full shadow-lg"
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={16} className="group-hover/btn:rotate-12 transition-transform" />
                       <span>View Template</span>
                     </a>
 
@@ -135,9 +135,9 @@ const Templates = () => {
                       href={template.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 hover:border-white/50 transition-all duration-200 text-sm w-full"
+                      className="group/btn flex items-center justify-center space-x-2 px-6 py-3 border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 hover:border-primary-500/50 transition-all duration-300 text-sm w-full"
                     >
-                      <Github size={16} />
+                      <Github size={16} className="group-hover/btn:scale-110 transition-transform" />
                       <span>Source Code</span>
                     </a>
                   </div>

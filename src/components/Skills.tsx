@@ -20,68 +20,68 @@ const Skills = () => {
   const skillCategories = useMemo(() => [
     {
       icon: Code,
-      title: "Programming Languages",
+      title: "Core Languages",
       color: "from-primary-500 to-primary-600",
       skills: [
-        { name: "JavaScript (ES6+)", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "HTML5", level: 98 },
-        { name: "CSS3", level: 95 }
+        { name: "JavaScript (ES6+)", level: 93 },
+        { name: "TypeScript", level: 88 },
+        { name: "HTML5", level: 96 },
+        { name: "CSS3", level: 94 }
       ]
     },
     {
       icon: Globe,
-      title: "Frontend Frameworks",
+      title: "React Ecosystem",
       color: "from-primary-500 to-primary-600",
       skills: [
-        { name: "React.js", level: 95 },
-        { name: "Next.js", level: 92 },
-        { name: "Redux", level: 88 },
-        { name: "Context API", level: 90 }
+        { name: "React.js", level: 94 },
+        { name: "Next.js", level: 89 },
+        { name: "Redux", level: 86 },
+        { name: "Context API", level: 88 }
       ]
     },
     {
       icon: Layout,
-      title: "Styling & Design",
+      title: "UI Styling",
       color: "from-primary-500 to-primary-600",
       skills: [
-        { name: "Tailwind CSS", level: 95 },
-        { name: "CSS Modules", level: 85 },
-        { name: "Responsive Design", level: 98 },
-        { name: "Mobile-First Development", level: 92 }
+        { name: "Tailwind CSS", level: 93 },
+        { name: "CSS Modules", level: 82 },
+        { name: "Responsive Design", level: 95 },
+        { name: "Mobile-First", level: 91 }
       ]
     },
     {
       icon: Zap,
-      title: "Development Tools",
+      title: "Daily Tools",
       color: "from-primary-500 to-primary-600",
       skills: [
-        { name: "Git & GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "Postman", level: 85 },
-        { name: "Jira", level: 80 }
+        { name: "Git & GitHub", level: 89 },
+        { name: "VS Code", level: 94 },
+        { name: "Postman", level: 83 },
+        { name: "Jira", level: 78 }
       ]
     },
     {
       icon: Database,
-      title: "Libraries & APIs",
+      title: "Libraries I Use",
       color: "from-primary-500 to-primary-600",
       skills: [
-        { name: "Axios", level: 90 },
-        { name: "React Router", level: 88 },
-        { name: "Framer Motion", level: 85 },
-        { name: "Three.js", level: 75 }
+        { name: "Axios", level: 88 },
+        { name: "React Router", level: 87 },
+        { name: "Framer Motion", level: 84 },
+        { name: "Three.js", level: 72 }
       ]
     },
     {
       icon: Users,
-      title: "Best Practices",
+      title: "Work Approach",
       color: "from-primary-500 to-primary-600",
       skills: [
-        { name: "Unit Testing", level: 80 },
-        { name: "Code Reviews", level: 90 },
-        { name: "Performance Optimization", level: 88 },
-        { name: "Agile Methodologies", level: 85 }
+        { name: "Writing Tests", level: 79 },
+        { name: "Code Reviews", level: 88 },
+        { name: "Optimization", level: 86 },
+        { name: "Team Work", level: 84 }
       ]
     }
   ], []);
@@ -179,11 +179,11 @@ const Skills = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="glass rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group"
+              className="glass rounded-2xl p-8 border border-white/10 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 group hover:-translate-y-1"
             >
               {/* Category Header */}
               <div className="flex items-center space-x-3 mb-6">
-                <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                   <category.icon size={20} className="text-white" strokeWidth={2.5} />
                 </div>
                 <h3 className="text-lg font-bold text-white">
@@ -210,7 +210,7 @@ const Skills = () => {
                       </div>
 
                       {/* Progress Bar */}
-                      <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                      <div className="w-full h-2 bg-gray-800/50 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${animatedLevel}%` }}
@@ -219,7 +219,7 @@ const Skills = () => {
                             delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.5,
                             ease: "easeOut"
                           }}
-                          className="h-full bg-white rounded-full shadow-lg"
+                          className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full shadow-lg shadow-primary-500/30"
                         />
                       </div>
                     </div>
@@ -243,7 +243,7 @@ const Skills = () => {
             {specializations.map((specialization, index) => (
               <div
                 key={index}
-                className="glass px-5 py-2 rounded-xl border border-white/10 hover:border-white/20 transition-colors duration-200"
+                className="glass px-5 py-2.5 rounded-xl border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/5 transition-all duration-300 cursor-default hover:-translate-y-0.5"
               >
                 <span className="text-gray-300 font-medium text-sm">
                   {specialization}

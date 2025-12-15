@@ -22,113 +22,135 @@ const Projects = () => {
   const featuredProjects = [
     {
       id: 1,
+      icon: Building,
+      image: "/images/hackpro.png",
+      title: "HackPro SaaS",
+      subtitle: "Multi-Tenant Hackathon Management Platform",
+      year: "2025",
+      description: "A comprehensive multi-tenant SaaS platform for managing hackathons with advanced features including no-code builders, team management, and automated certificate generation.",
+      features: [
+        "Multi-tenancy with data isolation & custom domains",
+        "No-code registration form & landing page builders",
+        "Team formation with skill-based grouping",
+        "Weighted scoring with multi-stage evaluation",
+        "Auto-generated PDF certificates with email delivery",
+        "RBAC with 6 roles, JWT auth & security features"
+      ],
+      techStack: ["Next.js 15", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS", "shadcn/ui", "Three.js", "TipTap", "Cloudinary"],
+      liveUrl: "https://stingray-app-3dffp.ondigitalocean.app/",
+      linkedinDemo: "#",
+      color: "from-violet-500 to-purple-600",
+      achievements: "Supporting 1,000+ MAU with 99.9% uptime, processing 5,000+ emails monthly"
+    },
+    {
+      id: 2,
+      icon: Users,
+      image: "/images/rushd.png",
+      title: "Rushd Academy",
+      subtitle: "Multi-Tenant Educational SaaS Platform",
+      year: "2025",
+      description: "Led the Front-End Development of a comprehensive Multi-Tenant SaaS platform for educational academies with strict data isolation, real-time features, and financial reporting.",
+      features: [
+        "Admin Dashboard with Server Components & Streaming",
+        "Student Management with full CRUD operations",
+        "Course Scheduling & Real-time Attendance",
+        "Financial Reporting with Invoicing & Payment tracking",
+        "Dynamic routing for multi-page application",
+        "Backend API with Node.js/Express.js"
+      ],
+      techStack: ["Next.js 15", "React 19", "TypeScript", "Node.js", "Express.js", "Tailwind CSS", "Server Components"],
+      liveUrl: "https://rushd-system-academy.vercel.app/",
+      linkedinDemo: "#",
+      color: "from-emerald-500 to-teal-600",
+      achievements: "Architected high-performance dashboard with React Server Components"
+    },
+    {
+      id: 3,
       icon: Heart,
       image: "/images/vitaphe.png",
       title: "MindMed",
       subtitle: "Mental Health Platform",
       year: "2024",
-      description: "Comprehensive mental health platform with psychological assessments, intelligent scoring algorithms, AI chatbot for consultations, and 3D virtual assistant using Three.js/WebGL.",
+      description: "A mental health platform where users can take psychological tests and chat with an AI assistant. I added a 3D character using Three.js to make it more engaging and friendly.",
       features: [
-        "Psychological assessments with AI scoring",
-        "AI chatbot for mental health consultations",
-        "3D virtual assistant using Three.js/WebGL",
-        "Real-time result visualization",
-        "Progress tracking and analytics",
-        "Secure authentication with role-based dashboards"
+        "Take psychology tests with smart scoring",
+        "Chat with AI for mental health support",
+        "Cool 3D assistant built with Three.js",
+        "See your results in real-time",
+        "Track your progress over time",
+        "Different dashboards for users and admins"
       ],
       techStack: ["Next.js", "Tailwind CSS", "Redux", "Three.js", "REST APIs", "WebGL", "Chart.js", "JWT"],
       liveUrl: "https://mind-med-graduation-project.vercel.app",
       linkedinDemo: "#",
-      color: "from-primary-500 to-primary-600",
+      color: "from-rose-500 to-pink-600",
       achievements: "Reduced assessment completion time by 40%"
     },
     {
-      id: 2,
+      id: 4,
       icon: Play,
       image: "/images/bakwatch.png",
       title: "Bak Watch",
       subtitle: "Streaming Platform",
       year: "2024",
-      description: "Netflix-inspired streaming platform with dynamic catalog, detailed movie/series pages, advanced search/filtering, user watchlists, and personalized recommendations.",
+      description: "A movie streaming site inspired by Netflix. Users can browse movies, save favorites, and get recommendations. Built it with React and hooked up to the TMDb API for all the movie data.",
       features: [
-        "Dynamic movie/series catalog",
-        "Advanced search and filtering system",
-        "User watchlists and favorites",
-        "Personalized recommendations",
-        "Custom video player with controls",
-        "Responsive grid layouts with lazy loading"
+        "Browse tons of movies and TV shows",
+        "Search and filter what you want",
+        "Save your favorite content",
+        "Get recommendations based on your taste",
+        "Custom video player I built",
+        "Smooth animations and fast loading"
       ],
       techStack: ["React.js", "Tailwind CSS", "React Router", "Framer Motion", "TMDb API", "Context API"],
       liveUrl: "https://bak-watch.web.app",
       githubUrl: "https://github.com/belalwws/bak-watch",
-      color: "from-primary-500 to-primary-600",
+      color: "from-red-500 to-orange-600",
       achievements: "Smooth animations with Framer Motion and route prefetching"
     },
     {
-      id: 3,
+      id: 5,
       icon: FileText,
       image: "/images/bak-blog.png",
       title: "Bak Blog",
       subtitle: "Content Management System",
       year: "2024",
-      description: "Full-featured blog platform with CRUD operations for posts, categories, and comments, implementing RBAC (admin, editor, user) and content moderation.",
+      description: "A blogging platform where people can write and publish posts. It has different user roles - admins can do everything, editors can moderate, and regular users can write their own posts.",
       features: [
-        "CRUD operations for posts and categories",
-        "Role-based access control (RBAC)",
-        "Rich text editor with media uploads",
-        "Syntax highlighting and markdown support",
-        "Draft saving and SEO optimization",
-        "Comment system with moderation"
+        "Create and manage blog posts",
+        "Different permissions for different users",
+        "Rich text editor for writing",
+        "Support for code blocks and markdown",
+        "Save drafts before publishing",
+        "Comments with moderation tools"
       ],
       techStack: ["React.js", "Tailwind CSS", "Redux", "REST APIs", "JWT Authentication", "React Hook Form"],
       liveUrl: "https://bak-blog-1.onrender.com",
       linkedinDemo: "#",
-      color: "from-primary-500 to-primary-600",
+      color: "from-blue-500 to-cyan-600",
       achievements: "Client-side caching with optimistic UI updates"
     },
     {
-      id: 4,
+      id: 6,
       icon: Building,
       image: "/images/baktech.png",
       title: "Bak Technology",
       subtitle: "Corporate Website",
       year: "2024",
-      description: "Professional corporate website with clear information architecture, service showcase, portfolio, testimonials, and multi-step contact forms.",
+      description: "A clean corporate website for a tech company. Shows their services, past work, and client reviews. Made sure it loads super fast and looks good on all devices.",
       features: [
-        "Professional service showcase",
-        "Interactive portfolio gallery",
-        "Client testimonials section",
-        "Multi-step contact forms",
-        "SEO optimization strategies",
-        "Mobile-first responsive design"
+        "Clear showcase of services",
+        "Portfolio with past projects",
+        "Client testimonials and reviews",
+        "Contact form with validation",
+        "Optimized for Google SEO",
+        "Works great on mobile"
       ],
       techStack: ["React.js", "Tailwind CSS", "Performance Optimization", "SEO", "Framer Motion"],
       liveUrl: "https://bak-technology.web.app",
       linkedinDemo: "#",
-      color: "from-primary-500 to-primary-600",
+      color: "from-amber-500 to-yellow-600",
       achievements: "Achieved 95+ PageSpeed score with optimization"
-    },
-    {
-      id: 5,
-      icon: Users,
-      image: "/images/bakwatch.png",
-      title: "Social Media Platform",
-      subtitle: "Full-Stack Social Network",
-      year: "Jun 2024",
-      description: "Full-stack social media platform with user authentication, post creation/deletion, light/dark mode, and responsive design across all devices.",
-      features: [
-        "User authentication (login, logout, register)",
-        "Create, update, and delete posts",
-        "Light mode and dark mode toggle",
-        "Responsive design for all devices",
-        "Real-time updates",
-        "User profile management"
-      ],
-      techStack: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Node.js", "MongoDB", "Express"],
-      liveUrl: "https://666b6ccae5d72bc237cf7e1f--chimerical-sprite-ba8f2f.netlify.app/",
-      githubUrl: "https://github.com/a7medk7aledak/social-media-platform-project",
-      color: "from-primary-500 to-primary-600",
-      achievements: "Full CRUD operations with MongoDB integration"
     }
   ];
 
@@ -136,7 +158,7 @@ const Projects = () => {
     <section id="projects" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -150,7 +172,7 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-primary-gradient mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Showcasing innovative web applications built with modern technologies and best practices
+            Some of the projects I&apos;ve worked on recently
           </p>
         </motion.div>
 
@@ -164,20 +186,20 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 h-full">
+              <div className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all duration-300 h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10">
                 {/* Project Image */}
-                <div className="relative w-full h-48 bg-gradient-to-br from-slate-800 to-slate-900">
+                <div className="relative w-full h-48 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
 
                   {/* Icon Badge */}
-                  <div className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                  <div className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     <project.icon size={22} className="text-white" />
                   </div>
 
@@ -204,70 +226,70 @@ const Projects = () => {
                   </p>
                 </div>
 
-                  {/* Features List */}
-                  <div className="mb-4 px-6">
-                    <h4 className="text-sm font-semibold text-white mb-2">Key Features</h4>
-                    <div className="grid grid-cols-1 gap-1.5">
-                      {project.features.slice(0, 4).map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex items-center space-x-2 text-xs"
-                        >
-                          <div className={`w-1.5 h-1.5 bg-gradient-to-r ${project.color} rounded-full flex-shrink-0`}></div>
-                          <span className="text-gray-300">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                {/* Features List */}
+                <div className="mb-4 px-6">
+                  <h4 className="text-sm font-semibold text-white mb-2">Key Features</h4>
+                  <div className="grid grid-cols-1 gap-1.5">
+                    {project.features.slice(0, 4).map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-center space-x-2 text-xs"
+                      >
+                        <div className={`w-1.5 h-1.5 bg-gradient-to-r ${project.color} rounded-full flex-shrink-0`}></div>
+                        <span className="text-gray-300">{feature}</span>
+                      </div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Tech Stack */}
-                  <div className="mb-4 px-6">
-                    <h4 className="text-sm font-semibold text-white mb-2">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.techStack.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-white/10 text-gray-300 rounded-lg text-xs border border-white/10"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Achievement Badge */}
-                  <div className="mb-4 px-6">
-                    <div className={`inline-flex items-center px-3 py-1.5 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-lg border border-white/20`}>
-                      <span className="text-xs font-medium text-white">
-                        🏆 {project.achievements}
+                {/* Tech Stack */}
+                <div className="mb-4 px-6">
+                  <h4 className="text-sm font-semibold text-white mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.techStack.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 py-1 bg-white/10 text-gray-300 rounded-lg text-xs border border-white/10"
+                      >
+                        {tech}
                       </span>
-                    </div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 px-6 pb-6">
+                {/* Achievement Badge */}
+                <div className="mb-4 px-6">
+                  <div className={`inline-flex items-center px-3 py-1.5 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-lg border border-white/20`}>
+                    <span className="text-xs font-medium text-white">
+                      🏆 {project.achievements}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 px-6 pb-6">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn flex items-center justify-center space-x-2 px-6 py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-gray-50 hover:shadow-lg transition-all duration-300 flex-1 text-sm shadow-lg"
+                  >
+                    <ExternalLink size={16} className="group-hover/btn:rotate-12 transition-transform" />
+                    <span>Live Demo</span>
+                  </a>
+
+                  {project.githubUrl && (
                     <a
-                      href={project.liveUrl}
+                      href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-2 px-6 py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-gray-100 transition-all duration-200 flex-1 text-sm shadow-lg"
+                      className="group/btn flex items-center justify-center space-x-2 px-6 py-3 border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 hover:border-primary-500/50 transition-all duration-300 text-sm"
                     >
-                      <ExternalLink size={16} />
-                      <span>Live Demo</span>
+                      <Github size={16} className="group-hover/btn:scale-110 transition-transform" />
+                      <span>GitHub</span>
                     </a>
-
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 hover:border-white/50 transition-all duration-200 text-sm"
-                      >
-                        <Github size={16} />
-                        <span>GitHub</span>
-                      </a>
-                    )}
-                  </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

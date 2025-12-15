@@ -30,27 +30,27 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { 
-      icon: Github, 
-      href: "https://github.com/belalwws", 
+    {
+      icon: Github,
+      href: "https://github.com/belalwws",
       label: "GitHub",
       color: "hover:text-gray-400"
     },
-    { 
-      icon: Linkedin, 
-      href: "https://linkedin.com/in/belal-ahmed", 
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/belal-ahmid",
       label: "LinkedIn",
       color: "hover:text-blue-400"
     },
-    { 
-      icon: Mail, 
-      href: "mailto:belal.ahmed121sq1@gmail.com", 
+    {
+      icon: Mail,
+      href: "mailto:belal.ahmed121sq1@gmail.com",
       label: "Email",
       color: "hover:text-green-400"
     },
-    { 
-      icon: Phone, 
-      href: "tel:+201128300607", 
+    {
+      icon: Phone,
+      href: "tel:+201128300607",
       label: "Phone",
       color: "hover:text-purple-400"
     },
@@ -83,7 +83,7 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-            
+
             {/* Brand Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -98,7 +98,7 @@ const Footer = () => {
                 </h3>
                 <p className="text-primary-400 font-semibold mb-4">Front-End Developer</p>
                 <p className="text-gray-300 leading-relaxed max-w-md">
-                  Passionate about creating exceptional digital experiences through clean code and innovative design. 
+                  Passionate about creating exceptional digital experiences through clean code and innovative design.
                   Specializing in React.js, Next.js, and modern web technologies.
                 </p>
               </div>
@@ -141,10 +141,10 @@ const Footer = () => {
                   >
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-300 hover:text-white hover:gradient-text transition-all duration-300 text-sm flex items-center space-x-2 group"
+                      className="text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center space-x-2 group"
                     >
-                      <div className="w-1 h-1 bg-primary-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <span>{link.name}</span>
+                      <div className="w-0 h-0.5 bg-primary-gradient group-hover:w-3 transition-all duration-300 rounded-full"></div>
+                      <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                     </button>
                   </motion.li>
                 ))}
@@ -158,7 +158,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h4 className="text-xl font-bold text-white mb-6">Connect With Me</h4>
-              
+
               {/* Social Links - Enhanced */}
               <div className="flex space-x-3 mb-6">
                 {socialLinks.map((social, index) => (
@@ -208,9 +208,9 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="border-t border-white/10 py-8"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
+          <div className="flex flex-col items-center space-y-6">
+            {/* Copyright - Centered */}
+            <div className="flex items-center justify-center space-x-2 text-gray-400 text-sm">
               <span>© {new Date().getFullYear()} Belal Ahmed Mohamed.</span>
               <span>Made with</span>
               <Heart size={16} className="text-red-400 animate-pulse" />
@@ -218,16 +218,6 @@ const Footer = () => {
               <Coffee size={16} className="text-orange-400" />
               <span>using</span>
               <Code2 size={16} className="text-blue-400" />
-            </div>
-
-            {/* Tech Stack */}
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>Built with</span>
-              <span className="text-primary-400 font-medium">Next.js</span>
-              <span>•</span>
-              <span className="text-secondary-400 font-medium">Tailwind CSS</span>
-              <span>•</span>
-              <span className="text-purple-400 font-medium">Framer Motion</span>
             </div>
 
             {/* Back to Top Button - Enhanced */}

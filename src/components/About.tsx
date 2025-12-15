@@ -72,28 +72,28 @@ const About = () => {
       icon: Calendar,
       value: stats.experience,
       suffix: "+",
-      label: "Years Experience",
+      label: "Years Building",
       color: "from-primary-500 to-primary-600"
     },
     {
       icon: Code,
       value: stats.projects,
       suffix: "+",
-      label: "Projects Completed",
+      label: "Real Projects",
       color: "from-primary-500 to-primary-600"
     },
     {
       icon: Award,
       value: stats.technologies,
       suffix: "+",
-      label: "Technologies",
+      label: "Tech Stack",
       color: "from-primary-500 to-primary-600"
     },
     {
       icon: Users,
       value: stats.satisfaction,
       suffix: "%",
-      label: "Client Satisfaction",
+      label: "Success Rate",
       color: "from-primary-500 to-primary-600"
     }
   ];
@@ -107,12 +107,12 @@ const About = () => {
   };
 
   const achievements = [
-    "Lead front-end development for comprehensive Islamic educational platform",
-    "Integrated LiveKit WebRTC for real-time virtual classrooms",
-    "Built 4 specialized role-specific dashboards with optimized state management",
-    "Achieved fully responsive design with performance optimization",
-    "Developed mental health platform with AI chatbot and 3D virtual assistant",
-    "Created Netflix-inspired streaming platform with advanced features"
+    "Built production hackathon platform serving 1,000+ users monthly",
+    "Designed database with 25+ tables and 100+ API endpoints",
+    "Automated 5,000+ emails and generated 1,000+ certificates monthly",
+    "Developed a mental health app with AI chat and 3D virtual assistant",
+    "Built a movie streaming site similar to Netflix",
+    "Always write clean code that other developers can easily understand"
   ];
 
   return (
@@ -135,7 +135,7 @@ const About = () => {
           <div className="w-24 h-1 bg-primary-gradient mx-auto rounded-full mb-6"></div>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Passionate about creating exceptional digital experiences through clean code and innovative design
+            A bit more about who I am and what I do
           </p>
         </motion.div>
 
@@ -151,16 +151,15 @@ const About = () => {
             
             <div className="prose prose-lg prose-invert">
               <p className="text-gray-300 leading-relaxed mb-6">
-                Passionate Software Engineer with expertise in building scalable, high-performance web applications.
-                Specialized in modern JavaScript ecosystem including React, Next.js, and full-stack development.
-                Strong problem-solving skills with a focus on clean code, best practices, and delivering exceptional
-                user experiences that drive business growth.
+                I&apos;m a Software Engineer who loves building web apps that actually work well. 
+                I spend most of my time with React and Next.js, making sure the code is clean and 
+                the user experience is smooth. My goal? Write code that&apos;s easy to read and maintain.
               </p>
 
               <p className="text-gray-300 leading-relaxed mb-6">
-                Currently leading front-end development for a comprehensive Islamic educational platform at
-                Lisan Alhekma Academy, architecting multi-role systems with real-time virtual classroom capabilities,
-                serving diverse user bases with cutting-edge web technologies.
+                Recently completed a project at Innovologia in Saudi Arabia where I built a full hackathon 
+                management platform. It was a production system handling 1,000+ monthly users with multi-tenant 
+                architecture, automated certificates, and real-time analytics. Really proud of what we built!
               </p>
             </div>
 
@@ -188,9 +187,9 @@ const About = () => {
           >
             <h3 className="text-3xl font-bold text-white mb-6">Education</h3>
             
-            <div className="glass rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10">
+            <div className="glass rounded-2xl p-8 border border-white/10 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-1">
               <div className="flex items-start space-x-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white/10">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white/10 group-hover:scale-105 transition-transform">
                   <Image
                     src="/images/aiet.jpg"
                     alt="AIET Logo"
@@ -217,28 +216,34 @@ const About = () => {
               </div>
             </div>
 
-            {/* Current Role */}
+            {/* Recent Work */}
             <div className="glass rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10">
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl shadow-lg">
-                  <Briefcase size={24} className="text-white" strokeWidth={2.5} />
+                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white/10 bg-white flex-shrink-0">
+                  <Image
+                    src="/images/innovologia.jpg"
+                    alt="Innovologia Logo"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-xl font-bold text-white mb-2">Front-End Developer</h4>
-                  <p className="text-secondary-400 font-semibold mb-1">Lisan Alhekma Academy</p>
+                  <h4 className="text-xl font-bold text-white mb-2">Software Engineer</h4>
+                  <p className="text-secondary-400 font-semibold mb-1">Innovologia</p>
                   <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
                     <div className="flex items-center space-x-1">
                       <MapPin size={14} />
-                      <span>Alexandria, Egypt</span>
+                      <span>Saudi Arabia</span>
                     </div>
                     <div className="flex items-center space-x-1">
                       <Calendar size={14} />
-                      <span>March 2025 – Present</span>
+                      <span>July 2025 – Dec 2025</span>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Leading front-end development for comprehensive Islamic educational platform with 
-                    multi-role architecture serving Students, Teachers, Academic Supervisors, and Admins.
+                    Built production-ready hackathon management platform with multi-tenant architecture, 
+                    serving 1,000+ users with automated workflows and real-time analytics.
                   </p>
                 </div>
               </div>
@@ -256,10 +261,10 @@ const About = () => {
           {statisticsData.map((stat, index) => (
             <div
               key={index}
-              className="glass rounded-2xl p-6 text-center border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 group"
+              className="glass rounded-2xl p-6 text-center border border-white/10 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 group hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                 <stat.icon size={24} className="text-white" strokeWidth={2.5} />
               </div>
 
