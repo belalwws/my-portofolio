@@ -10,7 +10,6 @@ import {
   Award,
   Calendar,
   MapPin,
-  Briefcase,
   CheckCircle
 } from "lucide-react";
 
@@ -148,17 +147,17 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold text-white mb-6">Professional Summary</h3>
-            
+
             <div className="prose prose-lg prose-invert">
               <p className="text-gray-300 leading-relaxed mb-6">
-                I&apos;m a Software Engineer who loves building web apps that actually work well. 
-                I spend most of my time with React and Next.js, making sure the code is clean and 
+                I&apos;m a Software Engineer who loves building web apps that actually work well.
+                I spend most of my time with React and Next.js, making sure the code is clean and
                 the user experience is smooth. My goal? Write code that&apos;s easy to read and maintain.
               </p>
 
               <p className="text-gray-300 leading-relaxed mb-6">
-                Recently completed a project at Innovologia in Saudi Arabia where I built a full hackathon 
-                management platform. It was a production system handling 1,000+ monthly users with multi-tenant 
+                Recently completed a project at Innovologia in Saudi Arabia where I built a full hackathon
+                management platform. It was a production system handling 1,000+ monthly users with multi-tenant
                 architecture, automated certificates, and real-time analytics. Really proud of what we built!
               </p>
             </div>
@@ -186,7 +185,7 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold text-white mb-6">Education</h3>
-            
+
             <div className="glass rounded-2xl p-8 border border-white/10 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-1">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white/10 group-hover:scale-105 transition-transform">
@@ -242,7 +241,7 @@ const About = () => {
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Built production-ready hackathon management platform with multi-tenant architecture, 
+                    Built production-ready hackathon management platform with multi-tenant architecture,
                     serving 1,000+ users with automated workflows and real-time analytics.
                   </p>
                 </div>

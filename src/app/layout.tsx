@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import SmoothScroller from "@/components/SmoothScroller";
-import CustomCursor from "@/components/CustomCursor";
 import PageLoader from "@/components/PageLoader";
 
 const inter = Inter({
@@ -106,7 +105,6 @@ export default function RootLayout({
             {/* Main Content */}
             <div className="relative z-10">
               <SmoothScroller />
-              <CustomCursor />
               <PageLoader />
               {children}
             </div>

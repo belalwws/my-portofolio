@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, MapPin, Phone, Mail, Globe, ArrowRight, Coffee, Download, Zap } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, ArrowRight, Coffee, Download, Zap } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -283,8 +283,10 @@ const Hero = () => {
               </motion.button>
 
               {/* Secondary CTA */}
-              <motion.button
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              <motion.a
+                href="https://drive.google.com/file/d/1_qXTfhh8ddxzfqKENA3b4Gq46IfV656C/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="group relative px-8 py-4 rounded-xl font-semibold overflow-hidden"
@@ -297,7 +299,7 @@ const Hero = () => {
                   <Download size={18} />
                   Download CV
                 </span>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -373,29 +375,6 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        >
-          <p className="text-gray-500 text-sm mb-3 font-medium tracking-wider uppercase">Scroll to explore</p>
-          <motion.button
-            onClick={scrollToNext}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full border border-white/10 hover:border-primary-500/50 hover:bg-primary-500/10 transition-all duration-300"
-          >
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ChevronDown size={20} className="text-primary-400" />
-            </motion.div>
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );
