@@ -7,7 +7,7 @@ export default function CustomCursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const rafRef = useRef<number>();
+    const rafRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         // Throttle mouse position updates using requestAnimationFrame
