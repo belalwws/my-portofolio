@@ -74,12 +74,6 @@ const Hero = () => {
     }
   }, [isScrambling, currentRoleIndex]);
 
-
-
-  const scrollToNext = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const contactInfo = [
     { icon: MapPin, text: "Alexandria, Egypt", link: null },
     { icon: Phone, text: "+201128300607", link: "tel:+201128300607" },
