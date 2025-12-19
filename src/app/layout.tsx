@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import SmoothScroller from "@/components/SmoothScroller";
 import PageLoader from "@/components/PageLoader";
+import GSAPProvider from "@/components/GSAPProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -105,7 +106,9 @@ export default function RootLayout({
             <div className="relative z-10">
               <SmoothScroller />
               <PageLoader />
-              {children}
+              <GSAPProvider>
+                {children}
+              </GSAPProvider>
             </div>
           </div>
         </ThemeProvider>

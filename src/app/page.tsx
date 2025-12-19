@@ -8,18 +8,25 @@ import Projects from "@/components/Projects";
 import Templates from "@/components/Templates";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Marquee, { MarqueeFilled } from "@/components/Marquee";
 
 export default function Home() {
   return (
     <main>
       <Header />
       <Hero />
+      <MarqueeFilled text="FRONTEND DEVELOPER" speed={20} />
       <About />
       <Services />
       <Skills />
+      <Marquee
+        text="BUILD • SHIP • SCALE • INNOVATE • CREATE • DESIGN • DEVELOP"
+        speed={35}
+      />
       <Experience />
       <Projects />
       <Templates />
+      <MarqueeFilled text="LET'S WORK TOGETHER" speed={25} />
       <Contact />
       <Footer />
     </main>

@@ -12,10 +12,83 @@ import {
   MapPin,
   CheckCircle
 } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const About = () => {
   const ref = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  // GSAP scroll animations
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Section title animation
+      gsap.fromTo(
+        ".about-title",
+        { opacity: 0, y: 60, filter: "blur(10px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".about-title",
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Content cards stagger animation
+      gsap.fromTo(
+        ".about-card",
+        { opacity: 0, y: 40, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".about-cards-container",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Stats cards animation
+      gsap.fromTo(
+        ".stat-card",
+        { opacity: 0, y: 30, scale: 0.9 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: ".stats-container",
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   // Statistics with animation
   const [stats, setStats] = useState({
@@ -115,7 +188,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" ref={sectionRef} className="py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent opacity-50"></div>
 
@@ -125,7 +198,7 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-16 about-title"
         >
           <h2 className="text-4xl lg:text-6xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
@@ -138,13 +211,13 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20 about-cards-container">
           {/* Left Content - Professional Summary */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-6 about-card"
           >
             <h3 className="text-3xl font-bold text-white mb-6">Professional Summary</h3>
 
@@ -182,7 +255,7 @@ const About = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
+            className="space-y-6 about-card"
           >
             <h3 className="text-3xl font-bold text-white mb-6">Education</h3>
 
